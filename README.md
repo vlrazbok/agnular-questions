@@ -2216,3 +2216,50 @@ export class MyImp implements My {
   in progress..
 </div>
 </details>
+
+##### Questions from Natalia Zakalyk
+
+Питання на співбесіду по Ангуляр
+I. Angular
+•	Що таке changeDetection, її стратегії (onPush – triggered when input value changed, if in template make actions (btn click, etc.)) 5
+•	Коли вона викликається (JS event (click, mouseneter, mousemove), ajax call performed, setInterval and setTimeout). 5
+•	Async pipe викликає changeDetection? (no, it only call markForCheck() of ChangeDetectorRef).
+•	Які існують cпособи мануального виклику changeDetection?  (ChangeDetectorRef.detectChanges (), (more difficult - ApplicationRef.tick (), NgZone.run) 5
+•	Як використовується в Ангулярі dependency injection і для чого (это основная концепция Angular, которая позволяет классу получать зависимости от другого класса. it’s application design pattern,  has module injector (provide in ngModule) and component injector (providers in component or directives level)). 5
+•	Порядок виконання DI. (look into component (ElementInjector) -> parent injector -> up -> up -> if not found -> back to component -> look into NgModule provider injector -> if not found anyway give Nullinjectorerror). 5
+•	DI декоратори (@Self (look only in the component), @SkipSelf (look on the parent), @Optional (no throw error if not found), @Host (look onto any injector and then in component – use in Directives or in content projection)). 5
+•	Типи директив в Ангуляр (components—directives with a template. structural, attribute directives). 5
+•	Способи оптимізації Angular apps (bundle-size optimization, etc.) 4
+•	Що таке lazy loading? 5
+•	У яких кейсах не потрібні unsubscribe? Чому? (always needed)
+•	Lifecycle hooks in Angular (ngOnChanges, ngOnit, noAfterViewChecked, ngAfterViewIit, …).
+•	Що таке Zone.js, як буде працювати апка без неї (library that help Angular track events – when it happen it notify Angular and start CD cycle). Without this you need manually trigger all changes, write additional methods for this.
+•	Що буде під час компіляції у фінальний бандл з сервісами, в яких задано як параметр providedIn: ‘root’ і якщо без цього параметру? (у першому випадку, якщо сервіс не використовується, то він завдяки tree shaking не потрапить у фінальний бандл, у другому – буде присутній у фінальному бандлі, навіть якщо ніде не використовується). -
+•	 Angular Router Events (GuardsCheckEnd, GuardsCheckStart, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, ResolveEnd, ResolveStart, RoutesRecognized). 4
+•	Що таке InjectionToken (використовується для створення унікальних маркерів провайдерів). 5
+•	JIT и AOT – чим відрізняються.
+•	ESLint. Які лінтери знає, різниця між TSLint I ESLint.
+•	Робота з різними таймзонами.
+II. RxJs
+•	Observable vs Promise (Observable: need sub for executed, cancelable, sync or async, can emit multiple values, has diff operators for change values Promise execute immediately, not cancelable, always async, emit onle one value).
+•	Оператори RxJs 5
+•	Різниця між forkJoin і mergeMap (forkJoin  - run observable in parallel, mergeMap  - get first value from first stream, then run next observable) 5
+•	Як відписуватися з допомогою takeUntil? 5
+II. TypeScript
+•	TypeScript: що таке Generic типи? 5
+•	Які бувають типи даних? 5
+•	якщо невідомий тип даних, то що юзаємо (any, unknown, never)? (unknown) 5
+III. NX
+•	Особливості роботи з NX:
+•	як налаштовуються різні апки, 4
+•	для чого angular.json, (contain defaultProject name, diff command, include styles, scripts, etc.) 5
+•	decorate-angular-cli.js (set simlink to ng and nx command) 4
+IV. Unit testing
+•	В чому різниця між Jest и Karma? 5
+•	Чим відрізняються Mock and Stubs? 5
+•	Як дізнатися coverage. 5
+•	Як написати тест, який перевіряє чи вилітає exception. 5
+V. Додаткові питання:
+1. Dumb and Smart component.
+2. trackBy (inside ngFor loop optimize performance).
+3. Що таке pure pipe?
