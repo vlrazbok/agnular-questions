@@ -2218,6 +2218,8 @@ export class MyImp implements My {
 </details>
 
 ##### Questions from Natalia Zakalyk
+
+<details>
 <div>
 <p>
 Питання на співбесіду по Ангуляр
@@ -2266,3 +2268,4 @@ V. Додаткові питання:
 3. Що таке pure pipe?
 </p>
 </div>
+</details>
