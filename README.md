@@ -2218,7 +2218,7 @@ export class MyImp implements My {
 </details>
 
 ##### Questions from Natalia Zakalyk
-
+<div>
 Питання на співбесіду по Ангуляр
 I. Angular
 •	Що таке changeDetection, її стратегії (onPush – triggered when input value changed, if in template make actions (btn click, etc.)) 5
@@ -2263,3 +2263,4 @@ V. Додаткові питання:
 1. Dumb and Smart component.
 2. trackBy (inside ngFor loop optimize performance).
 3. Що таке pure pipe?
+</div>
